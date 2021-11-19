@@ -31,7 +31,7 @@ header h3 {
 button {
   display: list-item;
   font-family: sans-serif;
-  background-color: rgb(26, 114, 117);
+  background-color: rgb(0, 0, 0);
   border-radius: 10px;
   border: 3px double #cccccc;
   color: white;
@@ -43,7 +43,7 @@ button {
 }
 
 button:hover {
-  box-shadow: 4px 3px 6px #770b5c;
+  box-shadow: 4px 4px 6px orange;
 }
 
 #start {
@@ -61,4 +61,14 @@ button:hover {
 
 #clearScore {
   display: inline-block;
+}
+
+#highScorebtn{
+    display: inline-block;
+}
+
+.message{
+    font-weight: lighter;
+    font: italic;
+
 }

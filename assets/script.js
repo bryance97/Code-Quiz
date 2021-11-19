@@ -30,7 +30,8 @@ var myQuestions = [
     correct: "alerts",
   },
   {
-    question: "The condition in an if / else statement is enclosed within ____.",
+    question:
+      "The condition in an if / else statement is enclosed within ____.",
     answers: ["quotes", "curly brackets", "parentheses", "square brackets"],
     correct: "parentheses",
   },
@@ -58,24 +59,63 @@ var myQuestions = [
   },
 ];
 
+var finalQuestionIndex = myQuestions.length;
+var currentQuestionIndex = 0;
+var questionCount = 0;
+
+// start timer questions
+function startQuiz() {
+  startpageContent.style.display = "none";
+  gameContent.style.display = "block";
+  questionCount = 0;
+
+  setTime();
+  generateQuestion(questionCount);
+}
+
+function generateQuestion(id) {
+  if (id < myQuestions.length) {
+    quizQuestion.textContent = myQuestions[id].question;
+    button1.textContent = myQuestions[id].answers[0];
+    button2.textContent = myQuestions[id].answers[1];
+    button3.textContent = myQuestions[id].answers[2];
+    button4.textContent = myQuestions[id].answers[3];
+  }
+}
 
 //fucton to start timer
 function timer() {
-    var timeLeft = 75;
+  var timeLeft = 75;
 
-    var timeInterval = setInterval(function() {
-        if (timeLeft === 0) {
-            clearInterval(timeLeft);
-            //Display message here
-        }
-        else {
-            timeLeft--;
-            timerEl.textContent = timeLeft + 'seconds left';
-        }
-    }, 1000)
+  var timeInterval = setInterval(function () {
+    if (timeLeft === 0) {
+      clearInterval(timeLeft);
+      //Display message here
+    } else {
+      timeLeft--;
+      timerEl.textContent = timeLeft + "seconds left";
+    }
+  }, 1000);
 }
 
-var startQuiz = function() {
-    var startButton = document.querySelector("#start-btn");
-    startButton.onclick = timer();
+var startQuiz = function () {
+  var startButton = document.querySelector("#start-btn");
+  startButton.onclick = timer();
+};
+
+function checkAnswer(event) {
+  event.preventDefault();
+
+  if (myQuestions[questionCount].correctAnswer === event.target.value) {
+    p.textContent = "Correct!";
+  } else if (myQuestions[questionCount].correctAnswer !== event.target.value) {
+    timeLeft = timeLeft - 10;
+    p.textContent = "Wrong!";
+  }
+
+  if (questionCount < myQuestions.length) {
+    questionCount++;
+  }
+
+  setQuestion(questionCount);
 }
