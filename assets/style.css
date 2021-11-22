@@ -1,41 +1,52 @@
 * {
   box-sizing: border-box;
-  margin: 0;
+  margin: 25px;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
-
 :root {
-  background-color: whitesmoke;
+  background-color: orange;
 }
 
+/*Header Style*/
 header nav {
   margin-right: 50px;
   float: right;
   display: inline;
 }
 
+h1 {
+    text-decoration: underline;
+  }
+
 header h3 {
   display: inline-block;
-  color: rgb(26, 114, 117);
-  margin-left: 30px;
+  color: black;
+  margin-left: 20px;
 }
 
+/*Container Style*/
 .container {
   margin: 60px 10px;
   width: 100%;
   height: 100px;
   text-align: center;
-  background-color: orange;
+}
+#myfonts {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/*Button Style*/
 button {
-  display: list-item;
   font-family: sans-serif;
-  background-color: rgb(0, 0, 0);
+  background-color: white;
   border-radius: 10px;
   border: 3px double #cccccc;
-  color: white;
-  text-align: left;
+  color: black;
+  text-align: center;
+  
   font-size: 15px;
   padding: 10px;
   width: 200px;
@@ -43,7 +54,7 @@ button {
 }
 
 button:hover {
-  box-shadow: 4px 4px 6px orange;
+  box-shadow: 4px 3px 6px orange;
 }
 
 #start {
@@ -59,16 +70,23 @@ button:hover {
   display: inline-block;
 }
 
-#clearScore {
+#highScorebtn {
   display: inline-block;
 }
 
-#highScorebtn{
-    display: inline-block;
+.message {
+  font-weight: lighter;
+  font: italic;
 }
 
-.message{
-    font-weight: lighter;
-    font: italic;
+#quiz {
+  display: none;
+}
 
+#gameover {
+  display: none;
+}
+
+#highscore {
+  display: none;
 }
