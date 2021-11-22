@@ -1,7 +1,7 @@
 # Code-Quiz
 
 ## Purpose
-This project consisited of creating a password generator with specific rules. For example, ask clients if they want uppercase, and lowercase letters or special characters.
+This project consisited of creating a timed quiz with deduction of time if an answer is incorrect and being able to store the test scores. Doing this you will be able to see the scores of everyone else plus your own.
 
 ## Website
 https://bryance97.github.io/Code-Quiz/
